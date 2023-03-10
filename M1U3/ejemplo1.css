@@ -1,0 +1,42 @@
+h1{
+    color: rgb(4, 5, 9);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgb(69, 69, 157);
+    padding-left: 0cap;
+    padding-right: 0cqh;
+    font-size: 35px;
+    line-height: normal;
+    text-transform: uppercase;
+
+
+}
+h2{
+    color: rgb(12, 12, 12);
+    background-color: rgb(177, 177, 239);
+font-size: 20px;
+
+}
+p{
+    color:rgb(80, 9, 9)
+    
+    line-height: 19px;
+    font-size: 20px;
+}
+.prof{
+    color: rgb(17, 16, 16);
+}
+.titulo{
+    background-color: aliceblue;
+}
+li {
+    list-style-type: circle;
+    color: rgb(3, 3, 3);
+    font-size: 20px;
+}
+
+    {
+
+li{
+    
+}
