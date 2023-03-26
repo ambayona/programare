@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cuadrados</title>
+	<style>
+		.square {
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="square" id="square1"></div>
+	<div class="square" id="square2"></div>
+	<div class="square" id="square3"></div>
+
+	<script>
+		var square1 = document.getElementById("square1");
+		var square2 = document.getElementById("square2");
+		var square3 = document.getElementById("square3");
+
+		square1.style.backgroundColor = "red";
+		square2.style.backgroundColor = "green";
+		square3.style.backgroundColor = "blue";
+
+		square1.addEventListener("click", function() {
+			document.body.style.backgroundColor = "red";
+		});
+
+		square2.addEventListener("click", function() {
+			document.body.style.backgroundColor = "green";
+		});
+
+		square3.addEventListener("click", function() {
+			document.body.style.backgroundColor = "blue";
+		});
+	</script>
+</body>
+</html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
