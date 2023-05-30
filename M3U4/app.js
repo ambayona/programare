@@ -62,7 +62,7 @@ if (!req.session.vistas) {
 }
 
 if (!req.session.vistas[req.originalUrl]) {
-  req,session.vistas[req.originalUrl] = 1;
+  req.session.vistas[req.originalUrl] = 1;
 } else {
   req.session.vistas[req.originalUrl] ++;
 }
