@@ -1,0 +1,13 @@
+footer{
+    background-color: aqua;
+}
+h1, h2{
+    font-family: 'alfa slab one',cursive ;
+}
+hero{
+    background: (header.jpg) no-repeat;
+    background-size: cover;
+    height: 50vh;
+    min-height: 600px;
+    color: white;
+}
