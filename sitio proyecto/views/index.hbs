@@ -1,103 +1,115 @@
-<div class="container-fluid">
-    <!--inicio home -->
-    <div id="Home" class="row align-items-center hero">
-        <div class="col-lg-3 offset-lg-2">
-            <p>bajada</p>
-            <h1>titulo principal</h1>
-            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat ab totam temporibus molestias
-                delectus
-                mollitia atque dignissimos! Soluta quis veritatis, dolorem consectetur assumenda laboriosam dolores
-                officiis harum blanditiis voluptatibus excepturi.</p>
-        </div>
+!--inicio home 
+<div id="Home" class="row align-items-center hero">
+    <div class="col-lg-3 offset-lg-2">
+        <p>LA CERVECERIA</p>
+        <h1>Bienvenidos a nuestro mundo artesanal</h1>
+        <p> Somos parte de un viaje atravesado por lupulo, verbo y amigos. Porque creemos que lo mejor que le podemos dar al mundo es nuestra cerveza.</p>
     </div>
 </div>
-<!--inicio novedades -->
-<div class="row my-3">
-    <div id="Novedades" class="col-md-5 offset-md-2">
+</div>
+<!-- inicio novedades  -->
+<div class="row py-4">
+    <div class="col-md-3 offset-lg-1">
         <h2>novedades</h2>
         <ul class="lista-novedades">
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"><img src="images/novedades01.jpg"
-                        alt="images/novedades01.jpg">nuevas
-                    recetas 1</a></li>
-            <li><a href="#"><img src="images/novedades01.jpg" alt="images/novedades01.jpg">nuevas
-                    recetas 2</a></li>
-            <li><a href="#"><img src="images/novedades01.jpg" alt="img/novedades01.jpg">nuevas
-                    recetas 3</a></li>
-            <li><a href="#"><img src="images/novedades01.jpg" alt="img/novedades01.jpg">nuevas
-                    recetas 4</a></li>
-            <li><a href="#"><img src="images/novedades01.jpg" alt="img/novedades01.jpg">nuevas
-                    recetas 5</a></li>
+            {{#each novedades}}
+            <li>
+                <a href="" data-bs-toggle="modal" data-bs-target="#modal{{id}}">
+                    <img src="images/novedades01.jpg" alt="images/novedades01.jpg">
+                    {{titulo}}</a>
+            </li>
+            {{/each}}
         </ul>
     </div>
     <!--cierra novedades -->
+    {{#each novedades}}
+
+    <!-- Button trigger modal -->
+    <!--<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{#each novedades}}
+    <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva receta de cerveza</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p> ejemplo de lo que venga de la base de dato</p>
+                    <h2>{{subtitulo}}</h2>
+                    <p>{{cuerpo}}</p>
                 </div>
-
             </div>
         </div>
-    </div> <!--fin Modal -->
-
-    <!--inicio testimonios -->
-    <div class="col-md-3 my-3">
-        <div class="rounded py-5 Testimonios">
-            <h2 class="text center">Testimonios</h2>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+    </div>
+    {{/each}}
+    <!-- Modal -->
+    <div class="modal fade" id="modal{{id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modal{{id}}Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal{{id}}Label">{{titulo}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/nosotros01.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Testimonio 1</h5>
-                            <p>La mejor cerveza del mundo 1</p>
-                        </div>
+                <div class="modal-body">
+                    <h2>{{subtitulo}}</h2>
+                    <p>{{cuerpo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fin Modal -->
+    {{/each}}
+</div>
+<!--inicio testimonios -->
+<div class="col-md-3 my-3">
+    <div class="rounded py-5 testimonios">
+        <h2 class="text-center">testimonios</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="active"
+                    aria-current="true" aria-label="slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active"
+                    aria-current="true" aria-label="slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonio">
+                        <h5>la mejor birra del mundo 1</h5>
+                        <p>adriana bayona</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/nosotros02.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Testimonio 2</h5>
-                            <p>La mejor cerveza del mundo 2</p>
-                        </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <h5>la mjor birra del mundo 2</h5>
+                        <p>esteban escalona</p>
                     </div>
-                    <div class="carousel-item">
-                        <img src="images/nosotros03.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h5>Testimonio 3</h5>
-                            <p>La mejor cerveza del mundo 3</p>
-                        </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <h5>la mejor birra del mundo 3</h5>
+                        <p>helena escalona</p>
                     </div>
                 </div>
             </div>
-
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">next</span>
             </button>
         </div>
-    </div> <!--cierra testimonios -->
-
+    </div>
+    <!--cierra testimonios -->
 </div> <!--cierra novedades -->
 <!--inicio historia -->
 <div id="Historia" class="row align-items-center py-4">
@@ -112,9 +124,9 @@
     </div>
     <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
         <h2>Historia</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quasi accusamus! Laboriosam, quia,
-            quisquam tenetur temporibus, at officia cum sed fugiat reprehenderit id et molestias? Voluptatum unde
-            adipisci vero consequatur!</p>
+        <p>Somos una confluencia de destino, búsqueda y casualidad. De apuestas arriesgadas y recorridos que atraviesan el mapa desde puntos opuestos.
+
+Por un tiempo los cuatro hermanos anduvimos por distintos lugares. Primero Martín volvió al terminar su carrera de Ingeniería en Alimentos en San Rafael con la idea de ofrecer, desde un humilde comienzo de garage, una cerveza bien cuidada, que sumara conocimiento aplicado y creatividad. Contó siempre con el apoyo familiar. Manush se fue haciendo conocida desde Bariloche, y los García de a poco nos volvimos a encontrar en un proyecto que combina lo que cada uno aprendió en su viaje.</p>
     </div>
 </div>
 <!--cierra historia -->
@@ -129,7 +141,8 @@
                     <img src="images/nosotros01.jpg" class="card-img-top" alt="Diana Reyes">
                     <div class="card-body">
                         <h5 class="card-title">Diana Reyes</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        <p class="card-text">This is a longer card with supporting text below as a natural
+                            lead-in
                             to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
@@ -139,7 +152,8 @@
                     <img src="images/nosotros02.jpg" class="card-img-top" alt="Lola Escalona">
                     <div class="card-body">
                         <h5 class="card-title">Lola Escalona</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        <p class="card-text">This is a longer card with supporting text below as a natural
+                            lead-in
                             to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
@@ -149,7 +163,8 @@
                     <img src="images/nosotros03.jpg" class="card-img-top" alt="Helena Bayona">
                     <div class="card-body">
                         <h5 class="card-title">Helena Bayona</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        <p class="card-text">This is a longer card with supporting text below as a natural
+                            lead-in
                             to additional content.</p>
                     </div>
                 </div>
@@ -159,7 +174,8 @@
                     <img src="images/nosotros04.jpg" class="card-img-top" alt="Emma Bayona">
                     <div class="card-body">
                         <h5 class="card-title">Emma Bayona</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                        <p class="card-text">This is a longer card with supporting text below as a natural
+                            lead-in
                             to additional content.</p>
                     </div>
                 </div>
@@ -196,7 +212,8 @@
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">email</label>
-                            <input type="text" class="form-control" id="email" placeholder="email@email.com" name="email">
+                            <input type="text" class="form-control" id="email" placeholder="email@email.com"
+                                name="email">
                         </div>
                         <div class="col-12">
                             <label for="tel" class="form-label">tel</label>
