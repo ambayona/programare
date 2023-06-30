@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "c": "^1.1.1",
-    "cloudinary": "^1.37.2",
+    "cloudinary": "^1.37.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Novedades</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script>
+    var productos = [
+      { nombre: 'Producto 1', precio: 10.99, novedades: true },
+      { nombre: 'Producto 2', precio: 19.99, novedades: false },
+      { nombre: 'Producto 3', precio: 5.99, novedades: true },
+      // Agrega más productos aquí
+    ];
+
+    $(document).ready(function() {
+      var tbody = $('#table-body');
+
+      // Función para agregar filas a la tabla
+      function agregarFila(producto) {
+        var row = $('<tr>');
+
+        var nombreCell = $('<td>').text(producto.nombre);
+        row.append(nombreCell);
+
+        var precioCell = $('<td>').text('$' + producto.precio.toFixed(2));
+        row.append(precioCell);
+
+        var novedadesCell = $('<td>').text(producto.novedades ? 'Sí' : 'No');
+        row.append(novedadesCell);
+
+        tbody.append(row);
+      }
+
+      // Agregar filas para cada producto en la lista
+      productos.forEach(function(producto) {
+        agregarFila(producto);
+      });
+
+      // Ejemplo de cómo agregar una nueva fila con un nuevo producto
+      $('#agregar-producto').click(function() {
+        var nuevoProducto = {
+          nombre: 'Nuevo Producto',
+          precio: 15.99,
+          novedades: true
+        };
+
+        agregarFila(nuevoProducto);
+      });
+    });
+  </script>
+
+  <button id="agregar-producto">Agregar Producto</button>
+</body>
+</html>
